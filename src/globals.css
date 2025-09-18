@@ -1,0 +1,31 @@
+:root {
+  /* 🎨 Paleta principal */
+  --color-primary: #956841;   /* Marrón cálido */
+  --color-secondary: #A77F50; /* Arena tostada */
+  --color-accent: #C2B9A8;    /* Beige suave */
+  --color-light: #D2E5E8;     /* Azul claro / contraste */
+  --color-dark: #82603E;      /* Marrón oscuro */
+  
+  /* 📝 Texto */
+  --color-text: #0e0d0d;
+  --color-text-light: #ffffff;
+  
+  /* 🔲 Fondos */
+  --color-background: #fafafa;
+  --color-background-dark: #111111;
+}
+
+@font-face {
+  font-family: 'JAi_____'; /* Nombre para usar en tu código */
+  src: url('./assets/fonts/JAi_____.TTF') format('truetype'); /* Ruta a tu archivo de fuente */
+  /* O usa .otf si es formato OpenType */
+}
+
+
+body {
+  margin: 0;
+  font-family: 'JAi_____', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
