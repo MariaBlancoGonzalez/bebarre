@@ -12,7 +12,7 @@ const items = [
     icon: <FaInstagram size={36} color="#fff" />,
     label: "Instagram",
     value: "@bebarrefit",
-    link: "https://instagram.com/bebarrefit"
+    link: "https://instagram.com/be.barrefit"
   },
   {
     icon: <FaMapMarkerAlt size={36} color="#fff" />,

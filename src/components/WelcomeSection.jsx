@@ -17,7 +17,7 @@ export default function WelcomeSection() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         style={{
           maxWidth: 800,
           width: "92%",
@@ -42,7 +42,7 @@ export default function WelcomeSection() {
             color: "#0c0c0cff",
             margin: 0,
             fontWeight: 400,
-            textAlign: "center",
+            textAlign: " justify",
           }}
         >
           En BeBarreFit Studio te invitamos a descubrir el poder transformador del ejercicio físico combinado con la elegancia del ballet y la serenidad del mindfulness.<br /><br />

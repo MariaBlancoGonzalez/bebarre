@@ -6,6 +6,9 @@ export default function Hero() {
     }
   };
 
+  // Color beige claro recomendado
+  const beige = "#ede8d0";
+
   return (
     <section
       className="hero"
@@ -21,11 +24,11 @@ export default function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        color: "white",
+        color: "#181818",
         overflow: "hidden"
       }}
     >
-      {/* Overlay oscuro */}
+      {/* Overlay oscuro para mejorar contraste */}
       <div
         style={{
           position: "absolute",
@@ -33,19 +36,30 @@ export default function Hero() {
           left: 0,
           width: "100%",
           height: "100%",
-          background: "rgba(0,0,0,0.4)", // oscurece la imagen
+          background: "rgba(0,0,0,0.18)",
           zIndex: 1
         }}
       />
 
-      {/* Contenido centrado */}
-      <div style={{ position: "relative", zIndex: 2, padding: "0 1rem" }}>
+      {/* Recuadro principal */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          padding: "2.5rem 3.5rem",
+          background: beige,
+          boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+          maxWidth: 900,
+          width: "90%",
+          margin: "0 auto",
+        }}
+      >
         <h2
           style={{
             fontSize: "1.8rem",
             letterSpacing: "0.15em",
             marginBottom: "1rem",
-            textShadow: "2px 2px 8px rgba(0,0,0,0.7)"
+            color: "#181818"
           }}
         >
           • DOS MÉTODOS, UNA ESENCIA •
@@ -56,29 +70,39 @@ export default function Hero() {
             fontWeight: "bold",
             lineHeight: 1.2,
             marginBottom: "2rem",
-            textShadow: "3px 3px 12px rgba(0,0,0,0.7)"
+            color: "#b89c8b"
           }}
         >
-          Encuentra tu equilibrio con <span style={{ color: "#E2E3DD" }}>BeBarreFit</span>
+          Encuentra tu equilibrio con <span style={{ color: "#795d4cff" }}>BeBarreFit</span>
         </h1>
-        <button
+      </div>
+
+      {/* Recuadro para "Primera clase GRATIS" */}
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "calc(60% + 120px)",
+          transform: "translateX(-50%)",
+          zIndex: 2,
+          padding: "1.1rem 2.5rem",
+          background: beige,
+          boxShadow: "0 4px 18px rgba(0,0,0,0.10)",
+          maxWidth: 420,
+          width: "80%",
+          textAlign: "center",
+        }}
+      >
+        <span
           style={{
-            padding: "0.8rem 2rem",
-            fontSize: "1.1rem",
-            fontWeight: "bold",
-            borderRadius: "8px",
-            border: "none",
-            backgroundColor: "#E2E3DD",
-            color: "#181818",
-            cursor: "pointer",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-            transition: "transform 0.2s",
+            fontSize: "1.5rem",
+            fontWeight: 600,
+            color: "#795d4cff",
+            letterSpacing: "0.03em"
           }}
-          onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
-          onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
         >
-          Primera clase GRATIS
-        </button>
+          ¡Primera clase GRATIS!
+        </span>
       </div>
 
       {/* Flecha de scroll */}
@@ -90,7 +114,12 @@ export default function Hero() {
           bottom: "32px",
           transform: "translateX(-50%)",
           cursor: "pointer",
-          zIndex: 2
+          zIndex: 3
+        }}
+        aria-label="Ir a la siguiente sección"
+        tabIndex={0}
+        onKeyPress={e => {
+          if (e.key === "Enter" || e.key === " ") scrollToMetodo();
         }}
       >
         <svg
@@ -99,7 +128,7 @@ export default function Hero() {
           height="48"
           viewBox="0 0 48 48"
           fill="none"
-          stroke="white"
+          stroke="#795d4cff"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
