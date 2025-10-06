@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function WelcomeSection() {
+export default function WelcomeSection({ id }) {
   return (
     <section
+      id={id}
       style={{
         width: "100%",
         padding: "2.5rem 0 2rem 0",
@@ -30,7 +31,7 @@ export default function WelcomeSection() {
             color: "#795d4cff",
             marginBottom: "1.2rem",
             letterSpacing: "0.01em",
-            textAlign: "center",
+            textAlign: "left",
           }}
         >
           Bienvenida a BeBarreFit Studio
@@ -42,7 +43,7 @@ export default function WelcomeSection() {
             color: "#0c0c0cff",
             margin: 0,
             fontWeight: 400,
-            textAlign: " justify",
+            textAlign: "left",
           }}
         >
           En BeBarreFit Studio te invitamos a descubrir el poder transformador del ejercicio físico combinado con la elegancia del ballet y la serenidad del mindfulness.<br /><br />

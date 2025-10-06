@@ -7,7 +7,7 @@ export default function PhotoCard({ src, title, text }) {
             width: "100%",
             maxWidth: "40vw",
             height: "600px",
-            boxShadow: "0 2px 12px rgba(0,0,0,0.12)"
+            boxShadow: "0 8px 24px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.15)"
         }}>
             <img
                 src={src}
@@ -33,7 +33,7 @@ export default function PhotoCard({ src, title, text }) {
                 alignItems: "center",
                 padding: "3rem",
                 boxSizing: "border-box",
-                boxShadow: "0 7px 16px rgba(0,0,0,0.10)",
+                boxShadow: "0 12px 32px rgba(0,0,0,0.30), 0 6px 16px rgba(0,0,0,0.20)",
                 pointerEvents: "auto"
             }}>
                 <h4 style={{

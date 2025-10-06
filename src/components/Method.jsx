@@ -25,7 +25,7 @@ const containerStyle = {
   justifyContent: "center",
   gap: "4rem",
   flexWrap: "wrap",
-  textAlign: "center",
+  textAlign: "left",
 };
 
 // 📦 Datos de cada bloque

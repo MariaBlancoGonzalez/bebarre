@@ -17,8 +17,8 @@ const items = [
   {
     icon: <FaMapMarkerAlt size={36} color="#fff" />,
     label: "Localización",
-    value: "Calle Ejemplo 123, Ciudad",
-    link: "https://maps.google.com/?q=Calle+Ejemplo+123,+Ciudad"
+    value: "C. Luis Ruiz Valdepeñas, 8, 13250 Daimiel, Ciudad Real",
+    link: "https://www.google.com/maps/place/C.+Luis+Ruiz+Valdepe%C3%B1as,+8,+13250+Daimiel,+Ciudad+Real/@39.0695828,-3.6136049,17z/data=!3m1!4b1!4m6!3m5!1s0xd6965107b324ebb:0x75248716ae07b7ed!8m2!3d39.0695828!4d-3.61103!16s%2Fg%2F11crx2kz78?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D"
   }
 ];
 

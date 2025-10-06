@@ -1,13 +1,10 @@
 export default function Hero() {
-  const scrollToMetodo = () => {
-    const metodoSection = document.getElementById("metodo");
-    if (metodoSection) {
-      metodoSection.scrollIntoView({ behavior: "smooth" });
+  const scrollToNext = () => {
+    const nextSection = document.getElementById("bienvenida");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  // Color beige claro recomendado
-  const beige = "#ede8d0";
 
   return (
     <section
@@ -17,6 +14,7 @@ export default function Hero() {
         position: "relative",
         height: "100vh",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
@@ -24,11 +22,12 @@ export default function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        color: "#181818",
-        overflow: "hidden"
+        color: "#fff",
+        overflow: "hidden",
+        padding: "0 2rem"
       }}
     >
-      {/* Overlay oscuro para mejorar contraste */}
+      {/* Overlay oscuro sutil */}
       <div
         style={{
           position: "absolute",
@@ -36,102 +35,116 @@ export default function Hero() {
           left: 0,
           width: "100%",
           height: "100%",
-          background: "rgba(0,0,0,0.18)",
+          background: "rgba(0,0,0,0.25)",
           zIndex: 1
         }}
       />
 
-      {/* Recuadro principal */}
+      {/* Contenido principal sin recuadro */}
       <div
         style={{
           position: "relative",
           zIndex: 2,
-          padding: "2.5rem 3.5rem",
-          background: beige,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
           maxWidth: 900,
-          width: "90%",
-          margin: "0 auto",
+          width: "100%",
         }}
       >
         <h2
           style={{
-            fontSize: "1.8rem",
+            fontSize: "2.2rem",
             letterSpacing: "0.15em",
-            marginBottom: "1rem",
-            color: "#181818"
+            marginBottom: "1.5rem",
+            color: "#fff",
+            textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)",
+            fontWeight: 400
           }}
         >
           • DOS MÉTODOS, UNA ESENCIA •
         </h2>
         <h1
           style={{
-            fontSize: "3rem",
+            fontSize: "3.8rem",
             fontWeight: "bold",
             lineHeight: 1.2,
-            marginBottom: "2rem",
-            color: "#b89c8b"
+            marginBottom: "3rem",
+            color: "#fff",
+            textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)"
           }}
         >
-          Encuentra tu equilibrio con <span style={{ color: "#795d4cff" }}>BeBarreFit</span>
+          Encuentra tu equilibrio con{" "}
+          <span 
+            style={{ 
+              color: "#b89c8b",
+              textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)"
+            }}
+          >
+            BeBarreFit
+          </span>
         </h1>
       </div>
 
-      {/* Recuadro para "Primera clase GRATIS" */}
+      {/* Recuadro "Primera clase GRATIS" sin esquinas redondeadas */}
       <div
         style={{
-          position: "absolute",
-          left: "50%",
-          top: "calc(60% + 120px)",
-          transform: "translateX(-50%)",
+          position: "relative",
           zIndex: 2,
-          padding: "1.1rem 2.5rem",
-          background: beige,
-          boxShadow: "0 4px 18px rgba(0,0,0,0.10)",
-          maxWidth: 420,
-          width: "80%",
-          textAlign: "center",
+          padding: "1.2rem 3rem",
+          background: "#ede8d0",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+          border: "2px solid #b89c8b",
+          marginTop: "2rem"
         }}
       >
         <span
           style={{
-            fontSize: "1.5rem",
-            fontWeight: 600,
+            fontSize: "1.4rem",
+            fontWeight: 700,
             color: "#795d4cff",
-            letterSpacing: "0.03em"
+            letterSpacing: "0.05em",
+            textTransform: "uppercase"
           }}
         >
-          ¡Primera clase GRATIS!
+          Primera clase GRATIS
         </span>
       </div>
 
       {/* Flecha de scroll */}
       <div
-        onClick={scrollToMetodo}
+        onClick={scrollToNext}
         style={{
           position: "absolute",
           left: "50%",
           bottom: "32px",
           transform: "translateX(-50%)",
           cursor: "pointer",
-          zIndex: 3
+          zIndex: 3,
+          transition: "transform 0.3s ease, opacity 0.3s ease"
         }}
         aria-label="Ir a la siguiente sección"
         tabIndex={0}
         onKeyPress={e => {
-          if (e.key === "Enter" || e.key === " ") scrollToMetodo();
+          if (e.key === "Enter" || e.key === " ") scrollToNext();
+        }}
+        onMouseEnter={e => {
+          e.currentTarget.style.transform = "translateX(-50%) scale(1.1)";
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.transform = "translateX(-50%) scale(1)";
         }}
       >
         <svg
           className="blink-arrow"
-          width="48"
-          height="48"
+          width="64"
+          height="64"
           viewBox="0 0 48 48"
           fill="none"
-          stroke="#795d4cff"
+          stroke="#fff"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
+          style={{
+            filter: "drop-shadow(2px 2px 8px rgba(0,0,0,0.6))"
+          }}
         >
           <path d="M12 20l12 12 12-12" />
         </svg>
