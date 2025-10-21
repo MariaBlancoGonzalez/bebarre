@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Horarios from "./components/Horarios";
@@ -9,6 +8,7 @@ import Classes from "./components/Classes";
 import Team from "./components/Team";
 import WelcomeSection from "./components/WelcomeSection";
 import Contact from "./components/Contact";
+import NavBar from "./components/NavBar";
 
 /* import GoogleReviewsWidget from 'google-reviews-widget'; */
 function Home() {
@@ -33,7 +33,7 @@ export default function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen w-screen overflow-x-hidden">
-        {/*<Navbar />*/}
+        <NavBar />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

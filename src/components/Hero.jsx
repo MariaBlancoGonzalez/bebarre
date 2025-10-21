@@ -1,3 +1,9 @@
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import { EffectFade, Autoplay } from "swiper/modules";
+
 export default function Hero() {
   const scrollToNext = () => {
     const nextSection = document.getElementById("bienvenida");
@@ -18,97 +24,70 @@ export default function Hero() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        backgroundImage: 'url("/header.PNG")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        color: "#fff",
+        background: "#181818",
         overflow: "hidden",
         padding: "0 2rem"
       }}
     >
-      {/* Overlay oscuro sutil */}
-      <div
+      <Swiper
+        modules={[EffectFade, Autoplay]}
+        effect="fade"
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        speed={1800}
+        loop
         style={{
+          width: "100vw",
+          height: "100vh",
           position: "absolute",
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
-          background: "rgba(0,0,0,0.25)",
           zIndex: 1
         }}
-      />
-
-      {/* Contenido principal sin recuadro */}
+      >
+        <SwiperSlide>
+          <img src="/2.JPG" style={{ width: "100%", height: "100vh", objectFit: "cover" }} alt="slide1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/3.JPG" style={{ width: "100%", height: "100vh", objectFit: "cover" }} alt="slide2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/4.JPG" style={{ width: "100%", height: "100vh", objectFit: "cover" }} alt="slide3" />
+        </SwiperSlide>
+      </Swiper>
       <div
         style={{
           position: "relative",
           zIndex: 2,
-          maxWidth: 900,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
           width: "100%",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "2.2rem",
-            letterSpacing: "0.15em",
-            marginBottom: "1.5rem",
-            color: "#fff",
-            textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)",
-            fontWeight: 400
-          }}
-        >
+          height: "100vh",
+          pointerEvents: "none"
+        }}>
+        <h2 style={{
+          fontSize: "2.2rem",
+          letterSpacing: "0.15em",
+          marginBottom: "1.5rem",
+          color: "#fff",
+          textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)",
+          fontWeight: 400,
+          pointerEvents: "auto"
+        }}>
           • DOS MÉTODOS, UNA ESENCIA •
         </h2>
-        <h1
-          style={{
-            fontSize: "3.8rem",
-            fontWeight: "bold",
-            lineHeight: 1.2,
-            marginBottom: "3rem",
-            color: "#fff",
-            textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)"
-          }}
-        >
-          Encuentra tu equilibrio con{" "}
-          <span 
-            style={{ 
-              color: "#b89c8b",
-              textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)"
-            }}
-          >
-            BeBarreFit
-          </span>
+        <h1 style={{
+          fontSize: "3.8rem",
+          fontWeight: "bold",
+          lineHeight: 1.2,
+          color: "#fff",
+          textShadow: "3px 3px 10px rgba(0,0,0,0.6), 1px 1px 4px rgba(0,0,0,0.8)",
+          pointerEvents: "auto"
+        }}>
+          Encuentra tu equilibrio con <span style={{ color: "#b89c8b" }}>BeBarre Fit</span>
         </h1>
       </div>
-
-      {/* Recuadro "Primera clase GRATIS" sin esquinas redondeadas */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          padding: "1.2rem 3rem",
-          background: "#ede8d0",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-          border: "2px solid #b89c8b",
-          marginTop: "2rem"
-        }}
-      >
-        <span
-          style={{
-            fontSize: "1.4rem",
-            fontWeight: 700,
-            color: "#795d4cff",
-            letterSpacing: "0.05em",
-            textTransform: "uppercase"
-          }}
-        >
-          Primera clase GRATIS
-        </span>
-      </div>
-
-      {/* Flecha de scroll */}
       <div
         onClick={scrollToNext}
         style={{
