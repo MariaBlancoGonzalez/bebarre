@@ -1,30 +1,29 @@
 import { motion } from "framer-motion";
 
 export default function Horario() {
-  const imagestyle = {
-  height: "80vh",  
-  width: "60vw",
-  objectFit: "cover",
-  display: "block",       // Para que respete margin auto
-  margin: "0 auto",  
-  alignItems: "center",
-  };
   return (
-    
-    <div className="flex flex-col items-center justify-center p-6 w-full">
-
-      {/* Imagen animada */}
+    <div style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      alignItems: "center", 
+      padding: "3rem 2rem", 
+      width: "100%" 
+    }}>
       <motion.img
-      style = {imagestyle}
-      src="/Horarios.PNG"
-      alt="Foto horarios"
-      className="w-full max-w-md rounded-2xl shadow-lg"
-      initial={{ opacity: 0, y: 50, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: false, amount: 0.4 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+        src="/Horarios.PNG"
+        alt="Horarios BeBarreFit"
+        style={{
+          height: "auto",
+          width: "100%",
+          maxWidth: "800px",
+          objectFit: "contain",
+          display: "block"
+        }}
+        initial={{ opacity: 0, y: 50, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       />
     </div>
   );
 }
-

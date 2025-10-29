@@ -1,23 +1,14 @@
 import React from "react";
 import PhotoCard from "./Photocard";
 import { motion } from "framer-motion";
-import HalfSeparator from "./Separator";
+import Separator from "./Separator";
 
-// 🎨 Estilos reutilizables
 const sectionStyle = {
   width: "100%",
   padding: "1rem 0 8rem 0",
   position: "relative",
   overflow: "visible",
-  marginBottom : "3rem",
-};
-
-const titleStyle = {
-  textAlign: "center",
-  fontSize: "2rem",
-  fontWeight: "bold",
-  marginBottom: "3rem",
-  color: "#181818",
+  marginBottom: "2rem",
 };
 
 const containerStyle = {
@@ -25,10 +16,8 @@ const containerStyle = {
   justifyContent: "center",
   gap: "4rem",
   flexWrap: "wrap",
-  textAlign: "left",
 };
 
-// 📦 Datos de cada bloque
 const metodoCards = [
   {
     src: "/pilates.jpg",
@@ -53,18 +42,16 @@ const esenciaCards = [
   },
 ];
 
+
 export default function Metodo() {
   return (
     <>
-      {/* Sección 1 */}
       <section style={sectionStyle}>
-        <HalfSeparator text="Dos metodos" side="left" />
         <div style={containerStyle}>
           {metodoCards.map((card, index) => (
             <motion.div
               key={index}
               initial={card.animation.initial}
-              whileInView={card.animation.withinView}
               whileInView={card.animation.whileInView}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false }}
@@ -75,16 +62,15 @@ export default function Metodo() {
         </div>
       </section>
 
-      {/* Sección 2 */}
       <section style={sectionStyle}>
-        <HalfSeparator text="Una Esencia" side="left" />
+        <Separator showBarre={true} text="Una Esencia" id="clases" />
         <div style={containerStyle}>
           {esenciaCards.map((card, index) => (
             <motion.div
               key={index}
               initial={card.animation.initial}
               whileInView={card.animation.whileInView}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
             >
               <PhotoCard {...card} />

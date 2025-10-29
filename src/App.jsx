@@ -10,19 +10,18 @@ import WelcomeSection from "./components/WelcomeSection";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
 
-/* import GoogleReviewsWidget from 'google-reviews-widget'; */
 function Home() {
-
   return (
     <>
       <Hero />
-      <WelcomeSection id="bienvenida" />
-      <Method id="metodo" />
-      <Separator text="Nuestras Clases" id="clases"/>
+      {/*<WelcomeSection id="bienvenida" />*/}
+      <Separator text="Dos métodos" id="clases" />
+      <Method id="barre" />
+      <Separator showBarre={true} text="Nuestras Clases" id="clases" />
       <Classes />
-      <Separator text="Horario"/>
+      <Separator showBarre={true} text="Horario" id="horarios" />
       <Horarios />
-      <Separator text="Equipo" />
+      <Separator showBarre={true} text="Equipo" id="team" />
       <Team />
       <Contact />
     </>
@@ -32,9 +31,9 @@ function Home() {
 export default function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen w-screen overflow-x-hidden">
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", width: "100%", overflowX: "hidden" }}>
         <NavBar />
-        <main className="flex-grow">
+        <main style={{ flexGrow: 1, paddingTop: "64px" }}>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
@@ -44,5 +43,3 @@ export default function App() {
     </Router>
   );
 }
-
-

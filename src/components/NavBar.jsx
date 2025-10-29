@@ -1,8 +1,13 @@
-export const BarreLogo = () => {
-  return (
-    <img src="/Barre_mini_logo_png.png" alt="BeBarre Logo" height={56} width={56} style={{objectFit: 'contain', display: 'block'}} />
-  );
-};
+
+export const BarreLogo = () => (
+  <img 
+    src="/Barre_mini_logo_png.png" 
+    alt="BeBarre Logo" 
+    height={56} 
+    width={56} 
+    style={{ objectFit: 'contain', display: 'block' }} 
+  />
+);
 
 export default function NavBar() {
   return (
@@ -11,7 +16,7 @@ export default function NavBar() {
         <BarreLogo />
       </div>
       <ul className="bebarre-navbar-links">
-        <li><a href="#metodo" className="bebarre-link">Método Barre</a></li>
+        <li><a href="#barre" className="bebarre-link">Método Barre</a></li>
         <li><a href="#clases" className="bebarre-link">Clases</a></li>
         <li><a href="#horarios" className="bebarre-link">Horarios</a></li>
         <li><a href="#team" className="bebarre-link">Team</a></li>
@@ -19,4 +24,3 @@ export default function NavBar() {
     </nav>
   );
 }
-
